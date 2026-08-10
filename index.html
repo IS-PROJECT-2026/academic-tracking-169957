@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Academic Tracking Dashboard</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -10,14 +11,159 @@
 
 <body>
 
-    <header>
-        <h1>Academic Tracking Dashboard</h1>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                Academic Tracker
+            </div>
+
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#courses">Courses</a>
+                <a href="#tasks">Tasks</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <p>Welcome to your academic dashboard.</p>
+
+    <!-- Main Dashboard -->
+    <main id="dashboard" class="container">
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div>
+                <p class="eyebrow">ACADEMIC OVERVIEW</p>
+                <h1>Welcome back, Joshua</h1>
+                <p>
+                    Keep track of your courses, assignments, and academic progress.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Summary Cards -->
+        <section class="summary-grid">
+
+            <article class="summary-card">
+                <p>Current GPA</p>
+                <h2>3.42</h2>
+                <span>Good progress</span>
+            </article>
+
+            <article class="summary-card">
+                <p>Courses</p>
+                <h2>6</h2>
+                <span>Active courses</span>
+            </article>
+
+            <article class="summary-card">
+                <p>Pending Tasks</p>
+                <h2>4</h2>
+                <span>Assignments remaining</span>
+            </article>
+
+        </section>
+
+
+        <!-- Courses Section -->
+        <section id="courses" class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">ACADEMICS</p>
+                    <h2>My Courses</h2>
+                </div>
+            </div>
+
+            <div class="course-grid">
+
+                <article class="course-card">
+                    <span class="course-code">ICS 301</span>
+                    <h3>Database Systems</h3>
+                    <p>Current Grade: A</p>
+                </article>
+
+                <article class="course-card">
+                    <span class="course-code">ICS 302</span>
+                    <h3>Computer Networks</h3>
+                    <p>Current Grade: B+</p>
+                </article>
+
+                <article class="course-card">
+                    <span class="course-code">ICS 303</span>
+                    <h3>Software Engineering</h3>
+                    <p>Current Grade: A-</p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Tasks Section -->
+        <section id="tasks" class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PRODUCTIVITY</p>
+                    <h2>Upcoming Tasks</h2>
+                </div>
+            </div>
+
+            <div class="task-list">
+
+                <div class="task-item">
+                    <div>
+                        <h3>GitHub Workflow Assignment</h3>
+                        <p>Due August 15</p>
+                    </div>
+
+                    <span class="task-status pending">
+                        Pending
+                    </span>
+                </div>
+
+
+                <div class="task-item">
+                    <div>
+                        <h3>Database Assignment</h3>
+                        <p>Due August 18</p>
+                    </div>
+
+                    <span class="task-status pending">
+                        Pending
+                    </span>
+                </div>
+
+
+                <div class="task-item completed">
+                    <div>
+                        <h3>Networks Lab</h3>
+                        <p>Completed August 10</p>
+                    </div>
+
+                    <span class="task-status complete">
+                        Complete
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Academic Tracking Dashboard</p>
+        </div>
+    </footer>
+
+
     <script src="js/script.js"></script>
+
 </body>
 </html>
