@@ -1,0 +1,1 @@
+console.log("Academic Tracking Dashboard loaded successfully.");
