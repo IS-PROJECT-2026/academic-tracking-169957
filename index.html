@@ -45,29 +45,85 @@
         <!-- Summary Cards -->
         <section class="summary-grid">
 
-            <article class="summary-card">
-                <p>Current GPA</p>
-                <h2>3.42</h2>
-                <span>Good progress</span>
-            </article>
+          <article class="summary-card">
+    <p>Current GPA</p>
+    <h2 id="gpa-value">0.00</h2>
+    <span>Based on recorded courses</span>
+</article>
 
             <article class="summary-card">
-                <p>Courses</p>
-                <h2>6</h2>
-                <span>Active courses</span>
-            </article>
+    <p>Courses</p>
+    <h2 id="course-count">0</h2>
+    <span>Recorded courses</span>
+</article>
 
             <article class="summary-card">
-                <p>Pending Tasks</p>
-                <h2>4</h2>
-                <span>Assignments remaining</span>
-            </article>
+    <p>Pending Tasks</p>
+    <h2 id="task-count">0</h2>
+    <span>Tasks remaining</span>
+</article>
 
         </section>
 
 
         <!-- Courses Section -->
         <section id="courses" class="dashboard-section">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">ACADEMICS</p>
+            <h2>My Courses</h2>
+        </div>
+    </div>
+
+    <form id="course-form" class="input-form">
+
+        <div class="form-group">
+            <label for="course-code">Course Code</label>
+            <input
+                type="text"
+                id="course-code"
+                placeholder="e.g. ICS 301"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="course-name">Course Name</label>
+            <input
+                type="text"
+                id="course-name"
+                placeholder="e.g. Database Systems"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="course-grade">Grade</label>
+            <select id="course-grade" required>
+                <option value="">Select grade</option>
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+            </select>
+        </div>
+
+        <button type="submit" class="primary-button">
+            Add Course
+        </button>
+
+    </form>
+
+    <div id="course-list" class="course-grid"></div>
+
+</section>
 
             <div class="section-heading">
                 <div>
@@ -103,6 +159,44 @@
 
         <!-- Tasks Section -->
         <section id="tasks" class="dashboard-section">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">PRODUCTIVITY</p>
+            <h2>Academic Tasks</h2>
+        </div>
+    </div>
+
+    <form id="task-form" class="input-form">
+
+        <div class="form-group">
+            <label for="task-name">Task</label>
+            <input
+                type="text"
+                id="task-name"
+                placeholder="e.g. Database Assignment"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="task-date">Due Date</label>
+            <input
+                type="date"
+                id="task-date"
+                required
+            >
+        </div>
+
+        <button type="submit" class="primary-button">
+            Add Task
+        </button>
+
+    </form>
+
+    <div id="task-list" class="task-list"></div>
+
+</section>
 
             <div class="section-heading">
                 <div>
