@@ -1,4 +1,4 @@
-# Academic Tracking Dashboard
+# Academic Tracking Dashboard-Student Edition
 
 An interactive academic tracking dashboard developed as part of the Git Workflow Challenge.
 
