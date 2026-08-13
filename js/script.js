@@ -11,8 +11,11 @@ const gradePoints = {
     "F": 0.0
 };
 
-let courses = [];
-let tasks = [];
+let courses =
+    JSON.parse(localStorage.getItem("academicCourses")) || [];
+
+let tasks =
+    JSON.parse(localStorage.getItem("academicTasks")) || [];
 
 
 const courseForm = document.getElementById("course-form");
@@ -24,6 +27,20 @@ const taskList = document.getElementById("task-list");
 const gpaValue = document.getElementById("gpa-value");
 const courseCount = document.getElementById("course-count");
 const taskCount = document.getElementById("task-count");
+
+
+function saveData() {
+
+    localStorage.setItem(
+        "academicCourses",
+        JSON.stringify(courses)
+    );
+
+    localStorage.setItem(
+        "academicTasks",
+        JSON.stringify(tasks)
+    );
+}
 
 
 function calculateGPA() {
@@ -151,15 +168,17 @@ courseForm.addEventListener("submit", function(event) {
     const grade =
         document.getElementById("course-grade").value;
 
-    courses.push({
-        code,
-        name,
-        grade
-    });
+   courses.push({
+    code,
+    name,
+    grade
+});
 
-    courseForm.reset();
+saveData();
 
-    renderCourses();
+courseForm.reset();
+
+renderCourses();
 });
 
 
@@ -173,21 +192,25 @@ taskForm.addEventListener("submit", function(event) {
     const date =
         document.getElementById("task-date").value;
 
-    tasks.push({
-        name,
-        date,
-        completed: false
-    });
+   tasks.push({
+    name,
+    date,
+    completed: false
+});
 
-    taskForm.reset();
+saveData();
 
-    renderTasks();
+taskForm.reset();
+
+renderTasks();
 });
 
 
 function deleteCourse(index) {
 
     courses.splice(index, 1);
+
+    saveData();
 
     renderCourses();
 }
@@ -197,6 +220,8 @@ function deleteTask(index) {
 
     tasks.splice(index, 1);
 
+    saveData();
+
     renderTasks();
 }
 
@@ -205,6 +230,8 @@ function toggleTask(index) {
 
     tasks[index].completed =
         !tasks[index].completed;
+
+    saveData();
 
     renderTasks();
 }
