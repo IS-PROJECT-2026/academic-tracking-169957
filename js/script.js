@@ -118,7 +118,9 @@ function renderTasks() {
         taskItem.innerHTML = `
             <div>
                 <h3>${task.name}</h3>
-                <p>Due ${task.date}</p>
+                <p>Course: ${task.course}</p>
+                <p>Due: ${task.date}</p>
+                <p>Priority: ${task.priority}</p>
             </div>
 
             <div class="task-actions">
@@ -189,20 +191,28 @@ taskForm.addEventListener("submit", function(event) {
     const name =
         document.getElementById("task-name").value.trim();
 
+    const course =
+        document.getElementById("task-course").value.trim();
+
     const date =
         document.getElementById("task-date").value;
 
-   tasks.push({
-    name,
-    date,
-    completed: false
-});
+    const priority =
+        document.getElementById("task-priority").value;
 
-saveData();
+    tasks.push({
+        name,
+        course,
+        date,
+        priority,
+        completed: false
+    });
 
-taskForm.reset();
+    saveData();
 
-renderTasks();
+    taskForm.reset();
+
+    renderTasks();
 });
 
 

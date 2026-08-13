@@ -132,28 +132,7 @@
                 </div>
             </div>
 
-            <div class="course-grid">
-
-                <article class="course-card">
-                    <span class="course-code">ICS 301</span>
-                    <h3>Database Systems</h3>
-                    <p>Current Grade: A</p>
-                </article>
-
-                <article class="course-card">
-                    <span class="course-code">ICS 302</span>
-                    <h3>Computer Networks</h3>
-                    <p>Current Grade: B+</p>
-                </article>
-
-                <article class="course-card">
-                    <span class="course-code">ICS 303</span>
-                    <h3>Software Engineering</h3>
-                    <p>Current Grade: A-</p>
-                </article>
-
-            </div>
-
+            
         </section>
 
 
@@ -167,32 +146,51 @@
         </div>
     </div>
 
-    <form id="task-form" class="input-form">
+   <form id="task-form" class="input-form">
 
-        <div class="form-group">
-            <label for="task-name">Task</label>
-            <input
-                type="text"
-                id="task-name"
-                placeholder="e.g. Database Assignment"
-                required
-            >
-        </div>
+    <div class="form-group">
+        <label for="task-name">Assignment Title</label>
+        <input
+            type="text"
+            id="task-name"
+            placeholder="e.g. Database Assignment"
+            required
+        >
+    </div>
 
-        <div class="form-group">
-            <label for="task-date">Due Date</label>
-            <input
-                type="date"
-                id="task-date"
-                required
-            >
-        </div>
+    <div class="form-group">
+        <label for="task-course">Course</label>
+        <input
+            type="text"
+            id="task-course"
+            placeholder="e.g. ICS 301"
+            required
+        >
+    </div>
 
-        <button type="submit" class="primary-button">
-            Add Task
-        </button>
+    <div class="form-group">
+        <label for="task-date">Due Date</label>
+        <input
+            type="date"
+            id="task-date"
+            required
+        >
+    </div>
 
-    </form>
+    <div class="form-group">
+        <label for="task-priority">Priority</label>
+        <select id="task-priority" required>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+        </select>
+    </div>
+
+    <button type="submit" class="primary-button">
+        Add Assignment
+    </button>
+
+</form>
 
     <div id="task-list" class="task-list"></div>
 
@@ -205,44 +203,7 @@
                 </div>
             </div>
 
-            <div class="task-list">
-
-                <div class="task-item">
-                    <div>
-                        <h3>GitHub Workflow Assignment</h3>
-                        <p>Due August 15</p>
-                    </div>
-
-                    <span class="task-status pending">
-                        Pending
-                    </span>
-                </div>
-
-
-                <div class="task-item">
-                    <div>
-                        <h3>Database Assignment</h3>
-                        <p>Due August 18</p>
-                    </div>
-
-                    <span class="task-status pending">
-                        Pending
-                    </span>
-                </div>
-
-
-                <div class="task-item completed">
-                    <div>
-                        <h3>Networks Lab</h3>
-                        <p>Completed August 10</p>
-                    </div>
-
-                    <span class="task-status complete">
-                        Complete
-                    </span>
-                </div>
-
-            </div>
+           
 
         </section>
 
