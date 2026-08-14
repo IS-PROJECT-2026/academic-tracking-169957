@@ -27,6 +27,7 @@ const taskList = document.getElementById("task-list");
 const gpaValue = document.getElementById("gpa-value");
 const courseCount = document.getElementById("course-count");
 const taskCount = document.getElementById("task-count");
+const completionRate = document.getElementById("completion-rate");
 
 
 function saveData() {
@@ -57,19 +58,71 @@ function calculateGPA() {
     return totalPoints / courses.length;
 }
 
+function calculateCompletedTasks() {
+    return tasks.filter(task => task.completed).length;
+}
+
+function calculatePendingTasks() {
+    return tasks.filter(task => !task.completed).length;
+}
+
+function calculateTaskCompletionRate() {
+
+    if (tasks.length === 0) {
+        return 0;
+    }
+
+    return (calculateCompletedTasks() / tasks.length) * 100;
+}
+
+function calculateHighestGrade() {
+
+    if (courses.length === 0) {
+        return "N/A";
+    }
+
+    return courses.reduce((highest, course) => {
+
+        if (gradePoints[course.grade] > gradePoints[highest]) {
+            return course.grade;
+        }
+
+        return highest;
+
+    }, courses[0].grade);
+}
+
+function calculateLowestGrade() {
+
+    if (courses.length === 0) {
+        return "N/A";
+    }
+
+    return courses.reduce((lowest, course) => {
+
+        if (gradePoints[course.grade] < gradePoints[lowest]) {
+            return course.grade;
+        }
+
+        return lowest;
+
+    }, courses[0].grade);
+}
+
 
 function updateSummary() {
 
     const gpa = calculateGPA();
 
     gpaValue.textContent = gpa.toFixed(2);
+
     courseCount.textContent = courses.length;
 
-    const pendingTasks = tasks.filter(
-        task => !task.completed
-    ).length;
+    taskCount.textContent =
+        calculatePendingTasks();
 
-    taskCount.textContent = pendingTasks;
+    completionRate.textContent =
+        `${calculateTaskCompletionRate().toFixed(0)}%`;
 }
 
 
