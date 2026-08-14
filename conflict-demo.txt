@@ -1,1 +1,1 @@
-Conflict created by Branch B
+Two branches to demonstrate an add/add merge conflict.
