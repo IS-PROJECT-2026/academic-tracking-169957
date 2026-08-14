@@ -282,3 +282,87 @@ footer p {
         flex-direction: column;
     }
 }
+@media (max-width: 900px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dashboard-section {
+        margin-top: 30px;
+    }
+}
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .nav-content {
+        align-items: flex-start;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+    }
+
+    .welcome-section {
+        padding: 25px 0;
+    }
+
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .input-form {
+        grid-template-columns: 1fr;
+    }
+
+    .primary-button {
+        width: 100%;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .task-actions {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+
+    .task-actions button {
+        flex: 1;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}
